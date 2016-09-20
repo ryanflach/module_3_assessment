@@ -1,4 +1,4 @@
-<h1>Stores within 25 miles of <%= @zip_code %></h1>
+<h1>Stores within 25 miles of <%= zip_code %></h1>
 <h3><%= @total %> Total Stores</h3>
 <table class='table table-striped table-responsive table-bordered'>
   <thead>
@@ -11,7 +11,7 @@
   <tbody>
     <% @stores.each_with_index do |store, index| %>
       <tr id="store-<%= index + 1 %>" >
-        <td><%= store[:long_name] %></td>
+        <td><%= store[:longName] %></td>
         <td><%= store[:city] %></td>
         <td><%= store[:distance] %></td>
         <td><%= store[:phone] %></td>

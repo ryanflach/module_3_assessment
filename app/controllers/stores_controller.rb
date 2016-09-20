@@ -1,9 +1,10 @@
 class StoresController < ApplicationController
   def index
-    response = Faraday.get("https://api.bestbuy.com/v1/stores((area(#{params[:zip_code]},25)))?apiKey=#{ENV['BEST_BUY_KEY']}&pageSize=15&format=json")
-    @zip_code = params[:zip_code]
-    parsed = JSON.parse(response.body, symbolize_names: true)
-    @total = parsed[:total]
-    @stores = parsed[:stores]
+    @stores = Store.closest_15_stores_within_25_miles(params[:zip_code])
+    response = BestBuyService.new
+                             .closest_15_stores_within_25_miles(
+                               params[:zip_code]
+                             )
+    @total = response[:total]
   end
 end

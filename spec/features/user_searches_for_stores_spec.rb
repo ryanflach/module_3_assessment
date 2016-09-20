@@ -27,12 +27,13 @@ RSpec.describe "User searches for stores" do
         expect(page).to have_content('Phone Number')
         expect(page).to have_content('Store Type')
       end
+
       within('table tbody #store-1') do
-        expect(page).to have_content()
-        expect(page).to have_content()
-        expect(page).to have_content()
-        expect(page).to have_content()
-        expect(page).to have_content()
+        expect(page).to have_content('Best Buy Mobile - Cherry Creek Shopping Center')
+        expect(page).to have_content('Denver')
+        expect(page).to have_content(3.25)
+        expect(page).to have_content('303-270-9189')
+        expect(page).to have_content('Mobile')
       end
     end
   end
