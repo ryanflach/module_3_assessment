@@ -11,7 +11,7 @@
   <tbody>
     <% @stores.each_with_index do |store, index| %>
       <tr id="store-<%= index + 1 %>" >
-        <td><%= store.name %></td>
+        <td><%= link_to store.name, store_path(store.id) %></td>
         <td><%= store.city %></td>
         <td><%= store.distance %></td>
         <td><%= store.phone %></td>

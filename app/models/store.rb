@@ -17,7 +17,7 @@ class Store
   end
 
   def self.find(id)
-    service.find_store_by_id(id)
+    Store.new(service.find_store_by_id(id))
   end
 
   def name
@@ -46,7 +46,11 @@ class Store
 
   def full_address
     "#{params[:address]}, #{params[:address2]}\n" \
-    ""
+    "#{params[:city]}, #{params[:region]}, #{params[:fullPostalCode]}"
+  end
+
+  def hours
+    params[:hoursAmPm].split(';').map { |day| day.strip }
   end
 
   private

@@ -15,7 +15,8 @@ class BestBuyService
   end
 
   def find_store_by_id(id)
-    response = connection.get('')
+    response = connection.get("/v1/stores((storeId=#{id}))")
+    parse(response)[:stores].first
   end
 
   private

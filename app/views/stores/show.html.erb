@@ -1,0 +1,10 @@
+<h1><%= @store.name %></h1>
+<h3><%= @store.store_type %></h3>
+<p>
+  <%= @store.full_address %>
+</p>
+<ul>
+  <% @store.hours.each do |day_hours| %>
+    <li><%= day_hours %></li>
+  <% end %>
+</ul>
