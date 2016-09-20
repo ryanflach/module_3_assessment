@@ -16,6 +16,10 @@ class Store
     raw_stores[:stores].map { |store| Store.new(store) }
   end
 
+  def self.find(id)
+    service.find_store_by_id(id)
+  end
+
   def name
     params[:longName]
   end
@@ -34,6 +38,15 @@ class Store
 
   def store_type
     params[:storeType]
+  end
+
+  def id
+    params[:storeId]
+  end
+
+  def full_address
+    "#{params[:address]}, #{params[:address2]}\n" \
+    ""
   end
 
   private

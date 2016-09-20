@@ -14,6 +14,10 @@ class BestBuyService
     parse(response)
   end
 
+  def find_store_by_id(id)
+    response = connection.get('')
+  end
+
   private
   attr_reader :connection
 
