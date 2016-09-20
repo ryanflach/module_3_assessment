@@ -4,7 +4,7 @@ RSpec.describe 'Request items', type: :request do
   it 'gets all items' do
     create_list(:item, 5)
 
-    get 'api/v1/items'
+    get '/api/v1/items'
 
     items = JSON.parse(response.body)
     first_item = items.first
