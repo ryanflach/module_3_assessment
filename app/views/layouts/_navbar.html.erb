@@ -19,6 +19,13 @@
       <li>
         <a href="/orders">Orders</a>
       </li>
+      <li>
+        <%= form_tag("/search", method: "get") do %>
+          <%= label_tag(:zip_code, "Find stores by zip code:") %>
+          <%= text_field_tag(:zip_code) %>
+          <%= submit_tag("Search") %>
+        <% end %>
+      </li>
     </ul>
   </div>
 </nav>
