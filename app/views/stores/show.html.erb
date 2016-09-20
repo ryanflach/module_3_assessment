@@ -3,7 +3,10 @@
 <p>
   <%= @store.full_address %>
 </p>
-<ul>
+<p>
+  Hours:
+</p>
+<ul id='store-hours'>
   <% @store.hours.each do |day_hours| %>
     <li><%= day_hours %></li>
   <% end %>
